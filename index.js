@@ -1,3 +1,4 @@
+//Cloud Animations
 const canvas = document.getElementById("landing-canvas");
 canvas.style.width = window.innerWidth > 1920 ? window.innerWidth : 1920;
 canvas.style.height = window.innerHeight > 1080 ? window.innerHeight : 1080;
@@ -11,7 +12,7 @@ for (let i = 0; i < 15; i++) {
     if (Math.random() > 0.5) {
         var image = new Image();
         image.src = `graphics/Cloud-${Math.floor(Math.random() * 6) + 1}.svg`;
-        image.onload = function() {
+        image.onload = function () {
             clouds.push({
                 type: this,
                 x: Math.random() * ctx.canvas.width,
@@ -30,7 +31,6 @@ setInterval(() => {
         ctx.globalAlpha = cloud.opacity;
         cloud.x = cloud.x + cloud.speed;
         ctx.drawImage(cloud.type, cloud.x, cloud.y, cloud.type.width * cloud.size, cloud.type.height * cloud.size);
-        console.log(cloud.type)
         if (cloud.x > ctx.canvas.width) {
             clouds.splice(clouds.indexOf(cloud), 1);
         }
@@ -41,8 +41,7 @@ setInterval(() => {
     if (Math.random() > 0.5 && clouds.length <= 10) {
         var image = new Image();
         image.src = `graphics/Cloud-${Math.floor(Math.random() * 6) + 1}.svg`;
-        console.log(image)
-        image.onload = function() {
+        image.onload = function () {
             clouds.push({
                 type: this,
                 x: -200,
@@ -54,3 +53,21 @@ setInterval(() => {
         }
     }
 }, 1000)
+
+
+//Skill Bar Props
+const skillbars = document.getElementsByClassName("skill-bar-filled");
+
+const observer = new IntersectionObserver(skillbars => {
+    skillbars.forEach(skillbar => {
+        // If the element is visible
+        if (skillbar.isIntersecting) {
+            // Add the animation class
+            skillbar.target.style.width = `${skillbar.target.dataset.skillPercentage}%`;
+        }
+    });
+});
+
+for (let i = 0; i < skillbars.length; i++) {
+    observer.observe(skillbars[i]);
+}

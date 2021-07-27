@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 
-<body class="dark">
+<body>
     <section class="section">
         <canvas id="landing-canvas"></canvas>
-        <div class="landing-div">
+        <header class="main-header">
             <nav class="main-nav">
                 <img src="graphics/PersonalBranding.svg" class="Leo's Logo">
                 <ul>
@@ -20,10 +20,12 @@
                     <li>Resume</li>
                 </ul>
             </nav>
+        </header>
+        <div class="landing-div">
             <div class="landing-text">
                 <h1>Hi! I'm <br class="break-for-space" />Leo Tian</h1>
                 <p>
-                    A front-end enthusiast
+                    A Fullstack Developer
                 </p>
             </div>
             <img src="graphics/LandingPageHillsLeft.svg" class="hills-left">
@@ -129,6 +131,18 @@
     </section>
 
     <section class="introduction">
+        <div class="intro-text">
+            <h2 class="intro-quote">
+                Building amazing things with code is what I do, inspiring and teaching others to do the same is what I aspire.
+            </h2>
+            <p>- Leo Tian</p>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section class="coding-experience">
+        
         <div class="web-dev-illustration-container">
             <div class="web-dev-illustration-circle">
                 <svg viewBox="0 0 85.395051 97.27619" class="web-dev-illustration">
@@ -202,11 +216,26 @@
             </div>
         </div>
 
-        <div class="intro-text">
-            <h2 class="intro-quote">
-                Building amazing things with code is what I do, inspiring and teaching others to do the same is what I aspire.
-            </h2>
-            <p>- Leo Tian</p>
+        <div class="skill-list">
+            <h2>My Coding Experience</h2>
+            <div class="skill">
+                <h3 class="skill-name">Javascript</h3>
+                <div class="skill-bar">
+                    <div class="skill-bar-filled" data-skill-percentage="90"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3 class="skill-name">React</h3>
+                <div class="skill-bar">
+                    <div class="skill-bar-filled" data-skill-percentage="75"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3 class="skill-name">Express</h3>
+                <div class="skill-bar">
+                    <div class="skill-bar-filled" data-skill-percentage="60"></div>
+                </div>
+            </div>
         </div>
     </section>
 
