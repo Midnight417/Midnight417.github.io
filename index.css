@@ -9,6 +9,7 @@
     --landing-color: #ffffff;
     --text-color: #ffffff;
     --transparent-color: rgba(256, 256, 256, 0.1);
+    --sky-gradient-evening: linear-gradient(to bottom, #08183a 25%, #811c5e 75%, #fd2e24 100%);
 }
 
 .light {
@@ -639,7 +640,6 @@ Skill List
         grid-template-rows: 350px auto;
         align-items: center;
     }
-    
     .web-dev-illustration-container {
         display: inline-grid;
         grid-template-rows: 350px;
@@ -647,7 +647,6 @@ Skill List
         margin: auto;
         position: relative;
     }
-    
     .web-dev-illustration-circle {
         height: 350px;
         min-height: unset;
@@ -661,7 +660,6 @@ Skill List
         overflow-x: visible;
         position: relative;
     }
-    
     .web-dev-illustration-circle::after {
         content: "";
         width: 100%;
@@ -674,10 +672,277 @@ Skill List
         position: absolute;
         z-index: -1;
     }
-
     .skill-list {
         position: relative;
         margin-left: 0;
         margin-top: 3rem;
+    }
+    .skill-list h2 {
+        text-align: center;
+    }
+}
+
+/*************************
+Volunteering Experience
+*************************/
+
+.volunteering-section {
+    display: flex;
+    padding: 3rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.volunteering-experience {
+    flex-grow: 1;
+}
+
+.volunteering-experience h2 {
+    font-size: 4vw;
+    margin-bottom: 1rem;
+}
+
+.volunteering-experience h3 {
+    font-size: 3vw;
+}
+
+.volunteering-experience button {
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    background-color: transparent;
+    font-size: 2vw;
+    border-radius: 5vw;
+    margin-top: 2rem;
+    transition: 0.25s;
+}
+
+.volunteering-experience button:hover {
+    padding-right: 4rem;
+}
+
+.volunteering-experience button::after {
+    content: ">>";
+    margin-left: 8px;
+    opacity: 0;
+    position: absolute;
+    transition: 0.25s;
+    transform: translateX(-4px);
+}
+
+.volunteering-experience button:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experience-graphic-container {
+    clip-path: url("#blob-shift");
+    width: 40vw;
+    min-width: 40vw;
+    height: 40vw;
+    min-height: 40vw;
+    position: relative;
+    background: var(--sky-gradient-evening);
+    display: flex;
+    overflow: hidden;
+}
+
+.experience-graphic-container img {
+    width: 70%;
+    margin-top: auto;
+    margin-left: auto;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+}
+
+.experience-graphic-sun {
+    background-color: #ffffff;
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 80%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-graphic-sun::after {
+    content: "";
+    position: absolute;
+    width: 1000%;
+    height: 1000%;
+    background: radial-gradient(closest-side, white 10%, #feef45 13%, #f77b02 15%, transparent);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.experience-graphic-shooting-star {
+    background-color: white;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-15deg);
+    animation: shooting-star 10s infinite;
+}
+
+.experience-graphic-shooting-star::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 100px solid white;
+    margin-left: 100px;
+}
+
+@keyframes shooting-star {
+    0% {
+        margin-left: 100%;
+        margin-top: 20%;
+    }
+    40% {
+        margin-left: 100%;
+        margin-top: 20%;
+        opacity: 1;
+    }
+    50% {
+        margin-left: -35%;
+        margin-top: 60%;
+        opacity: 0;
+    }
+    100% {
+        margin-left: -35%;
+        margin-top: 56%;
+    }
+}
+
+.experience-graphic-star {
+    background-color: white;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    border-radius: 50%;
+    animation: blinking-star alternate infinite ease-in-out;
+}
+
+.star-0 {
+    margin-left: 35%;
+    margin-top: 20%;
+    animation-duration: 10s;
+    animation-delay: 0.4s;
+}
+
+.star-1 {
+    margin-left: 24%;
+    margin-top: 22%;
+    animation-duration: 7.7s;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    margin-left: 38%;
+    margin-top: 13%;
+    animation-duration: 6s;
+    animation-delay: 0.6s;
+}
+
+.star-3 {
+    margin-left: 65%;
+    margin-top: 21%;
+    animation-duration: 8.6s;
+    animation-delay: 0.42s;
+}
+
+.star-4 {
+    margin-left: 51%;
+    margin-top: 23%;
+    animation-duration: 9s;
+    animation-delay: 0.5s;
+}
+
+.star-5 {
+    margin-left: 13%;
+    margin-top: 31%;
+    animation-duration: 9.3s;
+    animation-delay: 0.33s;
+}
+
+.star-6 {
+    margin-left: 74%;
+    margin-top: 22%;
+    animation-duration: 7.8s;
+    animation-delay: 0.9s;
+}
+
+.star-7 {
+    margin-left: 85%;
+    margin-top: 34%;
+    animation-duration: 10.3s;
+    animation-delay: 0.7s;
+}
+
+.star-8 {
+    margin-left: 90%;
+    margin-top: 35%;
+    animation-duration: 6.7s;
+    animation-delay: 0.3s;
+}
+
+.star-9 {
+    margin-left: 55%;
+    margin-top: 8%;
+    animation-duration: 13.4s;
+    animation-delay: 0.57s;
+}
+
+@keyframes blinking-star {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .volunteering-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .volunteering-experience {
+        margin-top: 2rem;
+    }
+    .experience-graphic-container {
+        width: 60vw;
+        min-width: 60vw;
+        height: 60vw;
+        min-height: 60vw;
+    }
+    .volunteering-experience h2 {
+        font-size: 5vw;
+    }
+    .volunteering-experience h3 {
+        font-size: 4vw;
     }
 }

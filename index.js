@@ -60,9 +60,7 @@ const skillbars = document.getElementsByClassName("skill-bar-filled");
 
 const observer = new IntersectionObserver(skillbars => {
     skillbars.forEach(skillbar => {
-        // If the element is visible
         if (skillbar.isIntersecting) {
-            // Add the animation class
             skillbar.target.style.width = `${skillbar.target.dataset.skillPercentage}%`;
         }
     });
